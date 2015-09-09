@@ -1,0 +1,19 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.page1{
+	background: url(../img/page1.png);
+}
+
+.open{
+	position: absolute;
+	right: 50%;
+	margin-right: -100px;
+	bottom: 10%;
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	border: 2px solid red;
+}
