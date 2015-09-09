@@ -3,23 +3,18 @@
 <head>
     <title></title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <script src="js/jquery-1.9.0.min.js"></script>
     <!-- fullPage -->
     <script src="js/jquery.fullPage.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css">
-    <link type="text/css" href="css/welcome.css">
+    <link rel="stylesheet" type="text/css" href="css/welcome.css">
     <style type="text/css">
     .page1{
         background: url(img/page1.png);
         background-size: 100% 100%;
     }
 
-    @media all and(max-width: 1024px){
-        .page1{
-        
-        background-size: ;
-    }
-    }
     .page2{
         background: url(img/page2.jpg);
         background-size: 100% 100%;
@@ -27,10 +22,13 @@
     </style>
 </head>
 <body>
+<div class="wrapper">
     <div id="fullpage">
-        <div class="section page1">
+        <div class="section page1" id="page1">
             <div class="open">
-                <img src="">
+
+                <img src="img/button_open.png" id="openButton">
+               
             </div>
         </div>
 
@@ -51,6 +49,22 @@
 
 
     </div> 
+</div>
+
+<script type="text/javascript">
+    window.onload = function(){
+    var openButton = document.getElementById('openButton');
+    openButton.onclick = function(){
+        setTimeout(function(){
+            var page1 = document.getElementById('page1');
+            page1.style.background = 'url(img/index_BG_change.jpg)';
+            page1.style.backgroundSize = '100% 100%';
+            openButton.style.display = 'none';
+        },
+        3000);
+    }
+}
+</script>
 </body>
 
 <script type="text/javascript">

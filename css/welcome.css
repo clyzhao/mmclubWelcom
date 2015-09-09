@@ -3,17 +3,36 @@
 	padding: 0;
 }
 
+@media all and (min-width: 415px){
+	.wrapper{
+		width: 375px;
+		margin: 0 auto;
+	}
+	body{
+		background: #ccc;
+	}	
+}
+
+
 .page1{
 	background: url(../img/page1.png);
 }
 
 .open{
+	text-align: center;
 	position: absolute;
-	right: 50%;
-	margin-right: -100px;
-	bottom: 10%;
-	height: 100px;
-	width: 100px;
+	bottom: 7%;
+	width: 100%;
+}
+
+.open img{
+	height: 55px;
 	border-radius: 50%;
+	width: 13%;
+	margin-left: 10px;
 	border: 2px solid red;
 }
+
+
+
+
