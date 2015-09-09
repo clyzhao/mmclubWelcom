@@ -4,9 +4,11 @@
     <title></title>
     <meta charset="utf-8">
     <script src="js/jquery-1.9.0.min.js"></script>
+    <script src="js/resLoader.js"></script>
     <!-- fullPage -->
     <script src="js/jquery.fullPage.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css">
+
     <link type="text/css" href="css/welcome.css">
     <style type="text/css">
     .page1{
@@ -54,65 +56,87 @@
 </body>
 
 <script type="text/javascript">
-    $(document).ready(function() {
-        $('#fullpage').fullpage({
-            //Navigation
-            menu: false,
-            lockAnchors: false,
-            anchors:['firstPage', 'secondPage','hello'],
-            navigation: false,
-            navigationPosition: 'right',
-            navigationTooltips: ['firstSlide', 'secondSlide'],
-            showActiveTooltip: false,
-            slidesNavigation: true,
-            slidesNavPosition: 'bottom',
+    var loader = new resLoader({
+         resources : [
+              'http://p2.qhimg.com/t01ed1438874f940dc0.jpg',
+              
+         ],
+         onStart : function(total){
+              console.log('start:'+total);
+         },
+         onProgress : function(current, total){
+              console.log(current+'/'+total);
+              var percent = current/total*100;
+              $('.progressbar').css('width', percent+'%');
+              $('.progresstext .current').text(current);
+              $('.progresstext .total').text(total);
+         },
+         onComplete : function(total){
+              alert('加载完毕:'+total+'个资源');
+              function() {
+                      $('#fullpage').fullpage({
+                          //Navigation
+                          menu: false,
+                          lockAnchors: false,
+                          anchors:['firstPage', 'secondPage','hello'],
+                          navigation: false,
+                          navigationPosition: 'right',
+                          navigationTooltips: ['firstSlide', 'secondSlide'],
+                          showActiveTooltip: false,
+                          slidesNavigation: true,
+                          slidesNavPosition: 'bottom',
 
-            //Scrolling
-            css3: true,
-            scrollingSpeed: 700,
-            autoScrolling: true,
-            fitToSection: true,
-            fitToSectionDelay: 1000,
-            scrollBar: false,
-            easing: 'easeInOutCubic',
-            easingcss3: 'ease',
-            loopBottom: false,
-            loopTop: false,
-            loopHorizontal: true,
-            continuousVertical: false,
-            normalScrollElements: '#element1, .element2',
-            scrollOverflow: false,
-            touchSensitivity: 15,
-            normalScrollElementTouchThreshold: 5,
+                          //Scrolling
+                          css3: true,
+                          scrollingSpeed: 700,
+                          autoScrolling: true,
+                          fitToSection: true,
+                          fitToSectionDelay: 1000,
+                          scrollBar: false,
+                          easing: 'easeInOutCubic',
+                          easingcss3: 'ease',
+                          loopBottom: false,
+                          loopTop: false,
+                          loopHorizontal: true,
+                          continuousVertical: false,
+                          normalScrollElements: '#element1, .element2',
+                          scrollOverflow: false,
+                          touchSensitivity: 15,
+                          normalScrollElementTouchThreshold: 5,
 
-            //Accessibility
-            keyboardScrolling: true,
-            animateAnchor: true,
-            recordHistory: true,
+                          //Accessibility
+                          keyboardScrolling: true,
+                          animateAnchor: true,
+                          recordHistory: true,
 
-            //Design
-            controlArrows: true,
-            verticalCentered: true,
-            resize : false,
-            sectionsColor : ['#ccc', '#fff'],
-            paddingTop: '3em',
-            paddingBottom: '10px',
-            fixedElements: '#header, .footer',
-            responsiveWidth: 0,
-            responsiveHeight: 0,
+                          //Design
+                          controlArrows: true,
+                          verticalCentered: true,
+                          resize : false,
+                          sectionsColor : ['#ccc', '#fff'],
+                          paddingTop: '3em',
+                          paddingBottom: '10px',
+                          fixedElements: '#header, .footer',
+                          responsiveWidth: 0,
+                          responsiveHeight: 0,
 
-            //Custom selectors
-            sectionSelector: '.section',
-            slideSelector: '.slide',
+                          //Custom selectors
+                          sectionSelector: '.section',
+                          slideSelector: '.slide',
 
-            //events
-            onLeave: function(index, nextIndex, direction){},
-            afterLoad: function(anchorLink, index){},
-            afterRender: function(){},
-            afterResize: function(){},
-            afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
-            onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
-        });
+                          //events
+                          onLeave: function(index, nextIndex, direction){},
+                          afterLoad: function(anchorLink, index){},
+                          afterRender: function(){},
+                          afterResize: function(){},
+                          afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
+                          onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
+                      });
+                  }
+         }
     });
+
+    loader.start();
+    $(document).ready();
 </script>
 </html>
