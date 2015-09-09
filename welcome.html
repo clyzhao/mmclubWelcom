@@ -5,9 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <script src="js/jquery-1.9.0.min.js"></script>
+    <script src="js/resLoader.js"></script>
     <!-- fullPage -->
     <script src="js/jquery.fullPage.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css">
+<!-- <<<<<<< HEAD
+=======
+    
+>>>>>>> origin/master -->
     <link rel="stylesheet" type="text/css" href="css/welcome.css">
     <style type="text/css">
     .page1{
@@ -22,7 +27,15 @@
     </style>
 </head>
 <body>
+<!-- <<<<<<< HEAD -->
 <div class="wrapper">
+<!-- ======= -->
+    <div id="loading">
+        <img src="img/loding.jpg">
+        <p id="loading-status"></p>
+    </div>
+<!-- 
+>>>>>>> origin/master -->
     <div id="fullpage">
         <div class="section page1" id="page1">
             <div class="open">
@@ -49,6 +62,7 @@
 
 
     </div> 
+<<<<<<< HEAD
 </div>
 
 <script type="text/javascript">
@@ -65,68 +79,88 @@
     }
 }
 </script>
+=======
+    
+>>>>>>> origin/master
 </body>
 
 <script type="text/javascript">
-    $(document).ready(function() {
-        $('#fullpage').fullpage({
-            //Navigation
-            menu: false,
-            lockAnchors: false,
-            anchors:['firstPage', 'secondPage','hello'],
-            navigation: false,
-            navigationPosition: 'right',
-            navigationTooltips: ['firstSlide', 'secondSlide'],
-            showActiveTooltip: false,
-            slidesNavigation: true,
-            slidesNavPosition: 'bottom',
+    var loader = new resLoader({
+         resources : [
+              'img/page1.png',
+              'http://www.kdatu.com/wp-content/uploads/2015/08/592609.jpg'
+         ],
+         onStart : function(total){
+              console.log('start:'+total);
+         },
+         onProgress : function(current, total){
+              console.log(current+'/'+total);
+              $("#loading-status").text("加载中..."+(current/total)*100+"%")
+         },
+         onComplete : function(total){
+            $("#loading").remove();
+              $('#fullpage').fullpage({
+                  //Navigation
+                  menu: false,
+                  lockAnchors: false,
+                  anchors:['firstPage', 'secondPage','hello'],
+                  navigation: false,
+                  navigationPosition: 'right',
+                  navigationTooltips: ['firstSlide', 'secondSlide'],
+                  showActiveTooltip: false,
+                  slidesNavigation: true,
+                  slidesNavPosition: 'bottom',
 
-            //Scrolling
-            css3: true,
-            scrollingSpeed: 700,
-            autoScrolling: true,
-            fitToSection: true,
-            fitToSectionDelay: 1000,
-            scrollBar: false,
-            easing: 'easeInOutCubic',
-            easingcss3: 'ease',
-            loopBottom: false,
-            loopTop: false,
-            loopHorizontal: true,
-            continuousVertical: false,
-            normalScrollElements: '#element1, .element2',
-            scrollOverflow: false,
-            touchSensitivity: 15,
-            normalScrollElementTouchThreshold: 5,
+                  //Scrolling
+                  css3: true,
+                  scrollingSpeed: 700,
+                  autoScrolling: true,
+                  fitToSection: true,
+                  fitToSectionDelay: 1000,
+                  scrollBar: false,
+                  easing: 'easeInOutCubic',
+                  easingcss3: 'ease',
+                  loopBottom: false,
+                  loopTop: false,
+                  loopHorizontal: true,
+                  continuousVertical: false,
+                  normalScrollElements: '#element1, .element2',
+                  scrollOverflow: false,
+                  touchSensitivity: 15,
+                  normalScrollElementTouchThreshold: 5,
 
-            //Accessibility
-            keyboardScrolling: true,
-            animateAnchor: true,
-            recordHistory: true,
+                  //Accessibility
+                  keyboardScrolling: true,
+                  animateAnchor: true,
+                  recordHistory: true,
 
-            //Design
-            controlArrows: true,
-            verticalCentered: true,
-            resize : false,
-            sectionsColor : ['#ccc', '#fff'],
-            paddingTop: '3em',
-            paddingBottom: '10px',
-            fixedElements: '#header, .footer',
-            responsiveWidth: 0,
-            responsiveHeight: 0,
+                  //Design
+                  controlArrows: true,
+                  verticalCentered: true,
+                  resize : false,
+                  sectionsColor : ['#ccc', '#fff'],
+                  paddingTop: '3em',
+                  paddingBottom: '10px',
+                  fixedElements: '#header, .footer',
+                  responsiveWidth: 0,
+                  responsiveHeight: 0,
 
-            //Custom selectors
-            sectionSelector: '.section',
-            slideSelector: '.slide',
+                  //Custom selectors
+                  sectionSelector: '.section',
+                  slideSelector: '.slide',
 
-            //events
-            onLeave: function(index, nextIndex, direction){},
-            afterLoad: function(anchorLink, index){},
-            afterRender: function(){},
-            afterResize: function(){},
-            afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
-            onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
-        });
+                  //events
+                  onLeave: function(index, nextIndex, direction){},
+                  afterLoad: function(anchorLink, index){},
+                  afterRender: function(){},
+                  afterResize: function(){},
+                  afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
+                  onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
+              });
+         }
     });
+
+    loader.start();
+    $(document).ready();
 </script>
 </html>
