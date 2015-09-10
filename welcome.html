@@ -47,6 +47,7 @@
 
 
         <div class="section page2">
+               
             
         </div>
 
@@ -62,26 +63,37 @@
 
 
     </div> 
-<<<<<<< HEAD
+<!-- <<<<<<< HEAD -->
 </div>
 
 <script type="text/javascript">
     window.onload = function(){
     var openButton = document.getElementById('openButton');
     openButton.onclick = function(){
+        openButton.style.border = '0';
+        openButton.style.animation = 'btnAnimation 3s ease-in-out 0s backwards';
         setTimeout(function(){
             var page1 = document.getElementById('page1');
             page1.style.background = 'url(img/index_BG_change.jpg)';
             page1.style.backgroundSize = '100% 100%';
-            openButton.style.display = 'none';
+            openButton.style.opacity = '0';
         },
         3000);
     }
+    console.log(openButton.style.opacity);
+    if(openButton.style.opacity == '0'){
+        console.log('aaa');
+        openButton.onclick = function(){
+
+            var page2 = document.getElementsByClassName('section page2')[0];
+            page2.setAttribute(className, 'section page2 fp-section fp-table active');
+        }
+    }
 }
 </script>
-=======
+<!-- =======
     
->>>>>>> origin/master
+>>>>>>> origin/master -->
 </body>
 
 <script type="text/javascript">
