@@ -16,6 +16,10 @@
         background: url(img/page1.png);
         background-size: 100% 100%;
     }
+    .page1-change{
+      background: url(img/index_BG_change.jpg);
+      background-size: 100% 100%;
+    }
 
     .page2{
         background: url(img/page2.jpg);
@@ -42,28 +46,26 @@
 
 
         <div class="section page2">
-
-            <p id="intro-1" class="intro-1-before"> 
+            <p id="intro-1" class="intro-1"> 
                 让自己的写的应用在自己和朋友的手机上跑起来，为自己的生活提供乐趣和方便。我们最讨厌过时的而且有错误的教科书上的所谓编程实验，我们喜欢尝试最新的SDK特性，开发炫酷的App应用，在App市场上淘金。
             </p>
-            <p id="intro-2" class="intro-1-before">
+            <p id="intro-2" class="intro-1">
                 我们相信一款好的产品不仅需要漂亮的代码，更需要精心策划的产品功能，交互体验与漂亮精致的设计稿。我们不仅开发功能强大的App，也希望我们的应用能够美观漂亮，触动人心。
             </p>
-            <p id="intro-3" class="intro-1-before">
+            <p id="intro-3" class="intro-1">
                 我们不喜欢各种主席、部长的称号，也不喜欢繁杂无意义的例会，更讨厌刷存在感的活动。我们喜欢构建一个有爱的小团队，轻松的氛围，让大家共同成长。我们会定期举行黑客马拉松，技术交流，头脑风暴，户外活动。
             </p>
-
         </div>
 
 
         <div class="section page3">
-            <p id="intro-4" class="intro-2-before"> 
+            <p id="intro-4" class="intro-2"> 
                 让自己的写的应用在自己和朋友的手机上跑起来，为自己的生活提供乐趣和方便。我们最讨厌过时的而且有错误的教科书上的所谓编程实验，我们喜欢尝试最新的SDK特性，开发炫酷的App应用，在App市场上淘金。
             </p>
-            <p id="intro-5" class="intro-2-before">
+            <p id="intro-5" class="intro-2">
                 我们相信一款好的产品不仅需要漂亮的代码，更需要精心策划的产品功能，交互体验与漂亮精致的设计稿。我们不仅开发功能强大的App，也希望我们的应用能够美观漂亮，触动人心。
             </p>
-            <p id="intro-6" class="intro-2-before">
+            <p id="intro-6" class="intro-2">
                 我们不喜欢各种主席、部长的称号，也不喜欢繁杂无意义的例会，更讨厌刷存在感的活动。我们喜欢构建一个有爱的小团队，轻松的氛围，让大家共同成长。我们会定期举行黑客马拉松，技术交流，头脑风暴，户外活动。
             </p>
         </div>
@@ -74,15 +76,19 @@
         </div>
     </div> 
 
-
     <div id="loading">
         <img src="img/loading.jpg">
         <p id="loading-status"></p>
     </div>
-
 </div>
 
+<script type="text/javascript">
+    window.onload = function(){
+   
+}
+</script>
 
+    
 </body>
 
 <script type="text/javascript">
@@ -97,6 +103,7 @@
          ],
          onStart : function(total){
               console.log('start:'+total);
+            $("#fullpage").css("display", "none");
          },
          onProgress : function(current, total){
               console.log(current+'/'+total);
@@ -104,7 +111,7 @@
          },
          onComplete : function(total){
             $("#loading").remove();
-
+            $("#fullpage").css("display", "block");
             $('#fullpage').fullpage({
                 //Navigation
                 menu: false,
@@ -158,26 +165,7 @@
                 //events
                 onLeave: function(index, nextIndex, direction){},
                 afterLoad: function(anchorLink, index){
-                  if (index == 2){
-                      console.log("in page2");
-                      $("#intro-1").addClass("intro-1-after");
-                      setTimeout(function () {
-                          $("#intro-2").addClass("intro-1-after");
-                      }, 1000);
-                      setTimeout(function () {
-                          $("#intro-3").addClass("intro-1-after");
-                      }, 2000);
-                  };
-                  if (index == 3) {
-                      console.log("in page3");
-                      $("#intro-4").addClass("intro-2-after");
-                      setTimeout(function () {
-                          $("#intro-5").addClass("intro-2-after");
-                      }, 1000);
-                      setTimeout(function () {
-                          $("#intro-6").addClass("intro-2-after");
-                      }, 2000);
-                  };
+                  
                 },
                 afterRender: function(){},
                 afterResize: function(){},
@@ -187,41 +175,19 @@
 
 
             $.fn.fullpage.setAllowScrolling(false, 'down, right');
+            var openButton = document.getElementById('openButton');
 
-              window.onload = function(){
-               var openButton = document.getElementById('openButton');
-               openButton.onclick = function(){
-                   openButton.style.border = '0';
-                   openButton.style.animation = 'btnAnimation 3s ease-in-out 0s backwards';
-                   setTimeout(function(){
-                       var page1 = document.getElementById('page1');
-                       page1.style.background = 'url(img/index_BG_change.jpg)';
-                       page1.style.backgroundSize = '100% 100%';
-                       openButton.style.opacity = '0';
-                   },
-                   3);
-               }
-               console.log(openButton.style.opacity);
-               if(openButton.style.opacity == '0'){
-                   console.log('aaa');
-                   openButton.onclick = function(){
 
-                       var page2 = document.getElementsByClassName('section page2')[0];
-                       page2.setAttribute(className, 'section page2 fp-section fp-table active');
-                   }
-               }
-               $.fn.fullpage.setAllowScrolling(true, 'down, right');
-           }
-            
-
-            
-
-            
-
-         }
+         }, 
     });
-
     loader.start();
-    $(document).ready();
+
+    $("#openButton").click(function () {
+      $("#page1").removeClass("page1");
+      $("#page1").addClass("page1-change");
+      $.fn.fullpage.setAllowScrolling(true  , 'down, right');
+      $(this).css("display", "none");
+
+    })
 </script>
 </html>
