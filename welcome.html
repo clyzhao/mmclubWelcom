@@ -42,6 +42,7 @@
 
 
         <div class="section page2">
+
             <p id="intro-1" class="intro-1-before"> 
                 让自己的写的应用在自己和朋友的手机上跑起来，为自己的生活提供乐趣和方便。我们最讨厌过时的而且有错误的教科书上的所谓编程实验，我们喜欢尝试最新的SDK特性，开发炫酷的App应用，在App市场上淘金。
             </p>
@@ -51,6 +52,7 @@
             <p id="intro-3" class="intro-1-before">
                 我们不喜欢各种主席、部长的称号，也不喜欢繁杂无意义的例会，更讨厌刷存在感的活动。我们喜欢构建一个有爱的小团队，轻松的氛围，让大家共同成长。我们会定期举行黑客马拉松，技术交流，头脑风暴，户外活动。
             </p>
+
         </div>
 
 
@@ -72,19 +74,15 @@
         </div>
     </div> 
 
+
     <div id="loading">
         <img src="img/loading.jpg">
         <p id="loading-status"></p>
     </div>
+
 </div>
 
-<script type="text/javascript">
-    window.onload = function(){
-   
-}
-</script>
 
-    
 </body>
 
 <script type="text/javascript">
@@ -189,19 +187,34 @@
 
 
             $.fn.fullpage.setAllowScrolling(false, 'down, right');
-            var openButton = document.getElementById('openButton');
-            openButton.onclick = function(){
-                setTimeout(function(){
-                    var page1 = document.getElementById('page1');
-                    page1.style.background = 'url(img/index_BG_change.jpg)';
-                    page1.style.backgroundSize = '100% 100%';
-                    openButton.style.display = 'none';
-                },
-                3);
-                // $("#open").remove();
-                $.fn.fullpage.setAllowScrolling(true, 'down, right');
 
-            };
+              window.onload = function(){
+               var openButton = document.getElementById('openButton');
+               openButton.onclick = function(){
+                   openButton.style.border = '0';
+                   openButton.style.animation = 'btnAnimation 3s ease-in-out 0s backwards';
+                   setTimeout(function(){
+                       var page1 = document.getElementById('page1');
+                       page1.style.background = 'url(img/index_BG_change.jpg)';
+                       page1.style.backgroundSize = '100% 100%';
+                       openButton.style.opacity = '0';
+                   },
+                   3);
+               }
+               console.log(openButton.style.opacity);
+               if(openButton.style.opacity == '0'){
+                   console.log('aaa');
+                   openButton.onclick = function(){
+
+                       var page2 = document.getElementsByClassName('section page2')[0];
+                       page2.setAttribute(className, 'section page2 fp-section fp-table active');
+                   }
+               }
+               $.fn.fullpage.setAllowScrolling(true, 'down, right');
+           }
+            
+
+            
 
             
 
