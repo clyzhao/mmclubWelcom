@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>加入我们</title>
+    <meta content="width=device-width, initial=1" name="viewport" />
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/zepto/1.1.4/zepto.min.js"></script>
+</head>
+<style type="text/css">
+@media screen and (min-width:1100px) and (max-width:1800px) {
+    body {
+        /*background: #e3e3e3;*/
+        width: 40%;
+        margin-left: 30%;
+        color: #333;
+        font: 14px/22px "Hiragino Sans GB","微软雅黑","宋体";
+    }
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+/*.content {
+    margin-left: 5%;
+    width: 100%;
+}*/
+
+.form {
+    margin-top: 20px;
+    position: relative;
+}
+
+.form input {
+    position: absolute;
+    left: 20%;
+    width: 50%;
+    border: 1px solid #696969;
+    height: 22px;
+}
+
+.form label {
+    font-size: 1.3em;
+    color: #696969;
+}
+
+label {
+    color: #696969;
+}
+
+.sex {
+    margin-top: 10px;
+}
+
+.form select {
+    position: absolute;
+    left: 20%;
+    top: 0px;
+    color: #696969;
+}
+
+.depart {
+    margin-top: 20px;
+}
+
+.depart2 {
+    margin-top: 20px;
+}
+
+.college select {
+    width: 51%;
+    height: 22px;
+    color: #696969;
+}
+
+select {
+    color: #696969;
+}
+
+legend {
+    color: #696969;
+}
+
+.submit {
+    width: 90%;
+    height: 40px;
+    border: 1px solid #696969;
+    margin-top: 20px;
+}
+
+.footer {
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    background: #B0B0B0;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+textarea {
+    width: 90%;
+    margin-top: 10px;
+    height: 80px;
+}
+
+.header {
+    width: 100%;
+    height: 30px;
+    background: #B0B0B0;
+    text-align: center;
+    padding-top: 20px;
+    color: #fff;
+}
+
+.content_header {
+  height: 80px;
+  padding-top: 30px;
+  text-align: center;
+  width: 100%;
+}
+
+.content_line {
+  background: rgba(0, 0, 0, 0) url("img/white_line.png") repeat scroll 0 0;
+  height: 2px;
+  margin-left: 5%;
+  width: 90%;
+}
+
+.content_intro {
+    line-height: 30px;
+    margin-left: 5%;
+    width: 90%;
+    margin-top: 40px;
+
+}
+
+.intro {
+  background: #47cead none repeat scroll 0 0;
+  width: 100%;
+}
+
+</style>
+
+<body>
+    <div class="content intro">
+            <div class="content_header">
+                <h2>南邮移动互联网俱乐部</h2>
+            </div>
+            <div class="content_line">
+            </div>
+            <div class="content_intro">
+                <h4>开发Android/iOS/Web App</h4>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;让自己的写的应用在自己和朋友的手机上跑起来，为自己的生活提供乐趣和方便。我们最讨厌过时的而且有错误的教科书上的所谓编程实验，我们喜欢尝试最新的SDK特性，开发炫酷的App应用，在App市场上淘金。</p>
+                <h4>产品策划和交互设计</h4>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;我们相信一款好的产品不仅需要漂亮的代码，更需要精心策划的产品功能，交互体验与漂亮精致的设计稿。我们不仅开发功能强大的App，也希望我们的应用能够美观漂亮，触动人心。</p>
+                <h4>欢乐的社团活动</h4>
+                <p> &nbsp;&nbsp;&nbsp;&nbsp;我们不喜欢各种主席、部长的称号，也不喜欢繁杂无意义的例会，更讨厌刷存在感的活动。我们喜欢构建一个有爱的小团队，轻松的氛围，让大家共同成长。我们会定期举行黑客马拉松，技术交流，头脑风暴，户外活动。</p>
+            </div>
+        </div>
+    <div class="header">
+        <h3>南邮移动互联网俱乐部报名表</h3>
+    </div>
+    <div class="content">
+        <form method="post" action="http://nyqn.sleepan.com/insert.php" id="form">
+            <div class="name form">
+                <label for="fname">姓名</label>
+                <input type="text" name="name" id="name">
+            </div>
+            <div class="num form">
+                <label for="fname">学号：</label>
+                <input type="text" name="number" id="number">
+            </div>
+            <div class="sex">
+                <legend>请选择：</legend>
+                <label for="male">汉纸</label>
+                <input type="radio" name="sex" id="male" value="男">
+                <label for="female">妹纸</label>
+                <input type="radio" name="sex" id="female" value="女">
+            </div>
+            <div class="college form">
+                <label for="college">学院:</label>
+                <select name="college" id="college">
+                    <option value="">请选择你的学院..</option>
+                    <option value="通信与信息工程学院">通信与信息工程学院</option>
+                    <option value="电子科学与工程学院">电子科学与工程学院</option>
+                    <option value="光电工程学院">光电工程学院</option>
+                    <option value="计算机学院、软件学院">计算机学院、软件学院</option>
+                    <option value="自动化学院">自动化学院</option>
+                    <option value="材料科学与工程学院">材料科学与工程学院</option>
+                    <option value="物联网学院">物联网学院</option>
+                    <option value="理学院">理学院</option>
+                    <option value="地理与生物信息学院">地理与生物信息学院</option>
+                    <option value="传媒与艺术学院">传媒与艺术学院</option>
+                    <option value="管理学院">管理学院</option>
+                    <option value="经济学院">经济学院</option>
+                    <option value="马克思主义学院">马克思主义学院</option>
+                    <option value="人文与社会科学学院">人文与社会科学学院</option>
+                    <option value="外国语学院">外国语学院</option>
+                    <option value="教育科学与技术学院">教育科学与技术学院</option>
+                    <option value="贝尔英才学院">贝尔英才学院</option>
+                    <option value="海外教育学院">海外教育学院</option>
+                </select>
+            </div>
+            <div class="major form">
+                <label for="fname">专业:</label>
+                <input type="text" name="major" id="major">
+            </div>
+            <div class="phone form">
+                <label for="fname">手机:</label>
+                <input type="text" name="phone" id="phone">
+            </div>
+            <div class="mail form">
+                <label for="fname">邮箱:</label>
+                <input type="text" name="email" id="mail">
+            </div>
+            <div class="qq form">
+                <label for="fname">ＱＱ:</label>
+                <input type="text" name="qq" id="qq">
+            </div>
+            <div class="dormitory form">
+                <label for="fname">宿舍:</label>
+                <input type="text" name="dormitory" id="dormitory">
+            </div> 
+            <div class="depart"> 
+            <label for="fname">兴趣方向</label> 
+            <select name="department1" id="depart1">
+                    <option value="">请选择..</option>
+                    <option value="程序组">IOS组</option>
+	       <option value="ANDROID组">Android组</option>
+                    <option value="WEB组">Web组</option>
+                    <option value="UI组">UI组</option>
+                    <option value="活动管理">活动管理</option>
+            </select>
+            </div>
+                        <div class="depart"> 
+                        <label for="fname">兴趣方向(备选)</label> 
+                        <select name="department2" id="depart1">
+                                <option value="">请选择..</option>
+                                <option value="程序组">IOS组</option>
+                       <option value="ANDROID组">Android组</option>
+                                <option value="WEB组">Web组</option>
+                                <option value="UI组">UI组</option>
+                                <option value="活动管理">活动管理</option>
+                        </select>
+                        </div>
+            <div class="special form">
+                <label for="fname" name="speciality">特长·爱好·对啥感兴趣</label>
+                <br/>
+                <textarea name="speciality" id="speciality">
+                </textarea>
+            </div>
+            <div class="study form">
+                <label>你希望从移动互联网俱乐部学到什么</label>
+                <br/>
+                <textarea name="study" id="study">
+                </textarea>
+            </div>
+            <input type="submit" value="提交" class="submit">
+        </form>
+    </div>
+    <div class="footer">
+        Copyright©2003-2014 MMClub
+    </div>
+</body>
+<script type="text/javascript">
+$(function() {
+    $("#form").submit(function() {
+        if ($("#name").val() == "") {
+            alert("亲，告诉我你叫啥好吗");
+            $("#name").focus();
+            return false;
+        }
+        if ($("#number").val() == "") {
+            alert(" 悄悄的，告诉我你的学号吧");
+            $("#number").focus();
+            return false;
+        }
+
+      if (!$('input[name="sex"]:checked').val()){
+         alert("性别呢");
+         $("#male").focus();
+         return false;
+      }
+
+        if ($("#college").val() == "") {
+            alert("你的学院到底是什么呢？");
+            $("#college").focus();
+            return false;
+        }
+        if ($("#major").val() == "") {
+            alert("你是什么专业的呢？");
+            $("#major").focus();
+            return false;
+        }
+        if ($("#phone").val() == "") {
+            alert("留个手机号认识一下吧");
+            $("#phone").focus();
+            return false;
+        }
+        if ($("#mail").val() == "") {
+            alert("其实用e-mail会显得更正式");
+            $("#email").focus();
+            return false;
+        }
+        if ($("#qq").val() == "") {
+            alert("其实QQ也是一个很好的东西啊");
+            $("#qq").focus();
+            return false;
+        }
+
+        if ($("#dormitory").val() == "") {
+            alert("告诉我你宿舍吧，万一哪天。。。。");
+            form.dormitory.focus();
+            return false;
+        }
+        if ($("#depart1").val() == "") {
+            alert("不告诉我你想去哪里我就派你去扫厕所");
+            $("#depart1").focus();
+            return false;
+        }
+        if ($("#speciality").val().trim()== "") {
+            alert("这将是我们录取时最重要的参考！（请尽量详细陈述）");
+            $("#speciality").focus();
+            return false;
+        }
+        if ($("#study").val().trim() =="") {
+            alert("  说说你的方向（请尽量50字以上）");
+            $("#study").focus();
+            return false;
+        }
+        return true;
+    })
+
+})
+</script>
+
+</html>
