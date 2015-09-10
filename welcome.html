@@ -21,12 +21,16 @@
         background: url(img/page2.jpg);
         background-size: 100% 100%;
     }
+
+    .page3{
+      background: url(img/page3.jpg);
+      background-size: 100% 100%;
+
+    }
     </style>
 </head>
 <body>
 <div class="wrapper">
-    
-
     <div id="fullpage">
         <div class="section page1" id="page1">
             <div class="open">
@@ -38,38 +42,45 @@
 
 
         <div class="section page2">
+            <p id="intro-1" class="intro-1-before"> 
+                让自己的写的应用在自己和朋友的手机上跑起来，为自己的生活提供乐趣和方便。我们最讨厌过时的而且有错误的教科书上的所谓编程实验，我们喜欢尝试最新的SDK特性，开发炫酷的App应用，在App市场上淘金。
+            </p>
+            <p id="intro-2" class="intro-1-before">
+                我们相信一款好的产品不仅需要漂亮的代码，更需要精心策划的产品功能，交互体验与漂亮精致的设计稿。我们不仅开发功能强大的App，也希望我们的应用能够美观漂亮，触动人心。
+            </p>
+            <p id="intro-3" class="intro-1-before">
+                我们不喜欢各种主席、部长的称号，也不喜欢繁杂无意义的例会，更讨厌刷存在感的活动。我们喜欢构建一个有爱的小团队，轻松的氛围，让大家共同成长。我们会定期举行黑客马拉松，技术交流，头脑风暴，户外活动。
+            </p>
+        </div>
+
+
+        <div class="section page3">
+            <p id="intro-4" class="intro-2-before"> 
+                让自己的写的应用在自己和朋友的手机上跑起来，为自己的生活提供乐趣和方便。我们最讨厌过时的而且有错误的教科书上的所谓编程实验，我们喜欢尝试最新的SDK特性，开发炫酷的App应用，在App市场上淘金。
+            </p>
+            <p id="intro-5" class="intro-2-before">
+                我们相信一款好的产品不仅需要漂亮的代码，更需要精心策划的产品功能，交互体验与漂亮精致的设计稿。我们不仅开发功能强大的App，也希望我们的应用能够美观漂亮，触动人心。
+            </p>
+            <p id="intro-6" class="intro-2-before">
+                我们不喜欢各种主席、部长的称号，也不喜欢繁杂无意义的例会，更讨厌刷存在感的活动。我们喜欢构建一个有爱的小团队，轻松的氛围，让大家共同成长。我们会定期举行黑客马拉松，技术交流，头脑风暴，户外活动。
+            </p>
+        </div>
+
+
+        <div class="section page4">
             
         </div>
-
-
-        <div class="section">
-
-        </div>
-
-
-        <div class="section">
-            
-        </div>
-        <div id="loading">
-            <img src="img/loding.jpg">
-            <p id="loading-status"></p>
-        </div>
-
     </div> 
+
+    <div id="loading">
+        <img src="img/loading.jpg">
+        <p id="loading-status"></p>
+    </div>
 </div>
 
 <script type="text/javascript">
     window.onload = function(){
-    var openButton = document.getElementById('openButton');
-    openButton.onclick = function(){
-        setTimeout(function(){
-            var page1 = document.getElementById('page1');
-            page1.style.background = 'url(img/index_BG_change.jpg)';
-            page1.style.backgroundSize = '100% 100%';
-            openButton.style.display = 'none';
-        },
-        3);
-    }
+   
 }
 </script>
 
@@ -80,75 +91,120 @@
     var loader = new resLoader({
          resources : [
               'img/page1.png',
-              'http://www.kdatu.com/wp-content/uploads/2015/08/592609.jpg'
+              'img/index_BG_change.jpg',
+              'img/page1.png',
+              'img/page2.jpg',
+              'img/page3.jpg'
+              // 'http://www.kdatu.com/wp-content/uploads/2015/08/592609.jpg'
          ],
          onStart : function(total){
               console.log('start:'+total);
          },
          onProgress : function(current, total){
               console.log(current+'/'+total);
-              $("#loading-status").text("加载中..."+(current/total)*100+"%")
+              $("#loading-status").text("加载中..."+current+"/"+total);
          },
          onComplete : function(total){
             $("#loading").remove();
-              $('#fullpage').fullpage({
-                  //Navigation
-                  menu: false,
-                  lockAnchors: false,
-                  anchors:['firstPage', 'secondPage','hello'],
-                  navigation: false,
-                  navigationPosition: 'right',
-                  navigationTooltips: ['firstSlide', 'secondSlide'],
-                  showActiveTooltip: false,
-                  slidesNavigation: true,
-                  slidesNavPosition: 'bottom',
 
-                  //Scrolling
-                  css3: true,
-                  scrollingSpeed: 700,
-                  autoScrolling: true,
-                  fitToSection: true,
-                  fitToSectionDelay: 1000,
-                  scrollBar: false,
-                  easing: 'easeInOutCubic',
-                  easingcss3: 'ease',
-                  loopBottom: false,
-                  loopTop: false,
-                  loopHorizontal: true,
-                  continuousVertical: false,
-                  normalScrollElements: '#element1, .element2',
-                  scrollOverflow: false,
-                  touchSensitivity: 15,
-                  normalScrollElementTouchThreshold: 5,
+            $('#fullpage').fullpage({
+                //Navigation
+                menu: false,
+                lockAnchors: false,
+                anchors:['firstPage', 'secondPage','hello'],
+                navigation: false,
+                navigationPosition: 'right',
+                navigationTooltips: ['firstSlide', 'secondSlide'],
+                showActiveTooltip: false,
+                slidesNavigation: true,
+                slidesNavPosition: 'bottom',
 
-                  //Accessibility
-                  keyboardScrolling: true,
-                  animateAnchor: true,
-                  recordHistory: true,
+                //Scrolling
+                css3: true,
+                scrollingSpeed: 700,
+                autoScrolling: true,
+                fitToSection: true,
+                fitToSectionDelay: 1000,
+                scrollBar: false,
+                easing: 'easeInOutCubic',
+                easingcss3: 'ease',
+                loopBottom: false,
+                loopTop: false,
+                loopHorizontal: true,
+                continuousVertical: false,
+                normalScrollElements: '#element1, .element2',
+                scrollOverflow: false,
+                touchSensitivity: 15,
+                normalScrollElementTouchThreshold: 5,
 
-                  //Design
-                  controlArrows: true,
-                  verticalCentered: true,
-                  resize : false,
-                  sectionsColor : ['#ccc', '#fff'],
-                  paddingTop: '3em',
-                  paddingBottom: '10px',
-                  fixedElements: '#header, .footer',
-                  responsiveWidth: 0,
-                  responsiveHeight: 0,
+                //Accessibility
+                keyboardScrolling: true,
+                animateAnchor: true,
+                recordHistory: true,
 
-                  //Custom selectors
-                  sectionSelector: '.section',
-                  slideSelector: '.slide',
+                //Design
+                controlArrows: true,
+                verticalCentered: true,
+                resize : false,
+                sectionsColor : ['#ccc', '#fff'],
+                paddingTop: '3em',
+                paddingBottom: '10px',
+                fixedElements: '#header, .footer',
+                responsiveWidth: 0,
+                responsiveHeight: 0,
 
-                  //events
-                  onLeave: function(index, nextIndex, direction){},
-                  afterLoad: function(anchorLink, index){},
-                  afterRender: function(){},
-                  afterResize: function(){},
-                  afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
-                  onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
-              });
+                //Custom selectors
+                sectionSelector: '.section',
+                slideSelector: '.slide',
+
+                //events
+                onLeave: function(index, nextIndex, direction){},
+                afterLoad: function(anchorLink, index){
+                  if (index == 2){
+                      console.log("in page2");
+                      $("#intro-1").addClass("intro-1-after");
+                      setTimeout(function () {
+                          $("#intro-2").addClass("intro-1-after");
+                      }, 1000);
+                      setTimeout(function () {
+                          $("#intro-3").addClass("intro-1-after");
+                      }, 2000);
+                  };
+                  if (index == 3) {
+                      console.log("in page3");
+                      $("#intro-4").addClass("intro-2-after");
+                      setTimeout(function () {
+                          $("#intro-5").addClass("intro-2-after");
+                      }, 1000);
+                      setTimeout(function () {
+                          $("#intro-6").addClass("intro-2-after");
+                      }, 2000);
+                  };
+                },
+                afterRender: function(){},
+                afterResize: function(){},
+                afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
+                onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
+            });
+
+
+            $.fn.fullpage.setAllowScrolling(false, 'down, right');
+            var openButton = document.getElementById('openButton');
+            openButton.onclick = function(){
+                setTimeout(function(){
+                    var page1 = document.getElementById('page1');
+                    page1.style.background = 'url(img/index_BG_change.jpg)';
+                    page1.style.backgroundSize = '100% 100%';
+                    openButton.style.display = 'none';
+                },
+                3);
+                // $("#open").remove();
+                $.fn.fullpage.setAllowScrolling(true, 'down, right');
+
+            };
+
+            
+
          }
     });
 
