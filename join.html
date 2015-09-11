@@ -26,27 +26,45 @@
     margin-left: 5%;
     width: 100%;
 }*/
+body{
+    background-color: black;
+}
 
 .form {
+    border-radius: 5px;
     margin-top: 20px;
     position: relative;
 }
 
+.radio{
+    background-color:#1b1b1b;
+    border:1px solid #25ab92;
+    border-radius:100%;
+    display:inline-block;
+    margin-right:10px;
+    margin-top:-1px;    
+    vertical-align:middle;
+    width:16px;
+    line-height:1
+}
+
 .form input {
+    border-radius: 5px;
     position: absolute;
     left: 20%;
     width: 50%;
-    border: 1px solid #696969;
+    border: 1px solid #25ab92;
     height: 22px;
 }
 
 .form label {
     font-size: 1.3em;
-    color: #696969;
+    color: #25ab92;
 }
 
 label {
-    color: #696969;
+    border-radius: 5px;
+    color: #25ab92;
 }
 
 .sex {
@@ -57,63 +75,79 @@ label {
     position: absolute;
     left: 20%;
     top: 0px;
-    color: #696969;
+    color: #25ab92;
+}
+
+.form input{
+    border-radius: 5px;
+    background-color: #1b1b1b;
+    border: 1px solid #25ab92;
 }
 
 .depart {
+    border-radius: 5px;
     margin-top: 20px;
 }
 
 .depart2 {
+    border-radius: 10px;
     margin-top: 20px;
 }
 
 .college select {
     width: 51%;
     height: 22px;
-    color: #696969;
+    color: #25ab92;
 }
 
 select {
-    color: #696969;
+    color: #25ab92;
+    background-color: #1b1b1b;
+    border: 1px solid #25ab92;
 }
 
 legend {
-    color: #696969;
+    color: #25ab92;
 }
 
 .submit {
-    width: 90%;
+    border-radius: 5px;
+    width: 100%;
     height: 40px;
-    border: 1px solid #696969;
+    border: 1px solid #25ab92;
     margin-top: 20px;
+    background-color: #1b1b1b;
+    color: #25ab92;
 }
 
 .footer {
     width: 100%;
     height: 40px;
     text-align: center;
-    background: #B0B0B0;
+    background: #1b1b1b;
     margin-top: 20px;
     padding-top: 20px;
 }
 
 textarea {
-    width: 90%;
+    border-radius: 5px;
+    width: 100%;
     margin-top: 10px;
     height: 80px;
+    background-color: #1b1b1b;
+    border: 1px solid #25ab92;
 }
 
 .header {
     width: 100%;
     height: 30px;
-    background: #B0B0B0;
+    background: #1b1b1b;
     text-align: center;
     padding-top: 20px;
-    color: #fff;
+    color: #25ab92;
 }
 
-.content_header {
+/*.content_header {
   height: 80px;
   padding-top: 30px;
   text-align: center;
@@ -138,12 +172,12 @@ textarea {
 .intro {
   background: #47cead none repeat scroll 0 0;
   width: 100%;
-}
+}*/
 
 </style>
 
 <body>
-    <div class="content intro">
+<!--     <div class="content intro">
             <div class="content_header">
                 <h2>南邮移动互联网俱乐部</h2>
             </div>
@@ -157,12 +191,12 @@ textarea {
                 <h4>欢乐的社团活动</h4>
                 <p> &nbsp;&nbsp;&nbsp;&nbsp;我们不喜欢各种主席、部长的称号，也不喜欢繁杂无意义的例会，更讨厌刷存在感的活动。我们喜欢构建一个有爱的小团队，轻松的氛围，让大家共同成长。我们会定期举行黑客马拉松，技术交流，头脑风暴，户外活动。</p>
             </div>
-        </div>
+        </div> -->
     <div class="header">
         <h3>南邮移动互联网俱乐部报名表</h3>
     </div>
     <div class="content">
-        <form method="post" action="http://nyqn.sleepan.com/insert.php" id="form">
+        <form method="post" action="/sign/join" id="form">
             <div class="name form">
                 <label for="fname">姓名</label>
                 <input type="text" name="name" id="name">
@@ -174,11 +208,11 @@ textarea {
             <div class="sex">
                 <legend>请选择：</legend>
                 <label for="male">汉纸</label>
-                <input type="radio" name="sex" id="male" value="男">
+                <input type="radio" name="sex" id="male" value="男" class="radio">
                 <label for="female">妹纸</label>
-                <input type="radio" name="sex" id="female" value="女">
+                <input type="radio" name="sex" id="female" value="女" class="radio">
             </div>
-            <div class="college form">
+<!--             <div class="college form">
                 <label for="college">学院:</label>
                 <select name="college" id="college">
                     <option value="">请选择你的学院..</option>
@@ -201,7 +235,7 @@ textarea {
                     <option value="贝尔英才学院">贝尔英才学院</option>
                     <option value="海外教育学院">海外教育学院</option>
                 </select>
-            </div>
+            </div> -->
             <div class="major form">
                 <label for="fname">专业:</label>
                 <input type="text" name="major" id="major">
@@ -210,18 +244,18 @@ textarea {
                 <label for="fname">手机:</label>
                 <input type="text" name="phone" id="phone">
             </div>
-            <div class="mail form">
+<!--             <div class="mail form">
                 <label for="fname">邮箱:</label>
                 <input type="text" name="email" id="mail">
-            </div>
+            </div> -->
             <div class="qq form">
                 <label for="fname">ＱＱ:</label>
                 <input type="text" name="qq" id="qq">
             </div>
-            <div class="dormitory form">
+<!--             <div class="dormitory form">
                 <label for="fname">宿舍:</label>
                 <input type="text" name="dormitory" id="dormitory">
-            </div> 
+            </div>  -->
             <div class="depart"> 
             <label for="fname">兴趣方向</label> 
             <select name="department1" id="depart1">
@@ -267,7 +301,7 @@ textarea {
 $(function() {
     $("#form").submit(function() {
         if ($("#name").val() == "") {
-            alert("亲，告诉我你叫啥好吗");
+            alert("告诉我你叫啥好吗");
             $("#name").focus();
             return false;
         }
@@ -283,11 +317,11 @@ $(function() {
          return false;
       }
 
-        if ($("#college").val() == "") {
-            alert("你的学院到底是什么呢？");
-            $("#college").focus();
-            return false;
-        }
+        // if ($("#college").val() == "") {
+        //     alert("你的学院到底是什么呢？");
+        //     $("#college").focus();
+        //     return false;
+        // }
         if ($("#major").val() == "") {
             alert("你是什么专业的呢？");
             $("#major").focus();
@@ -298,22 +332,22 @@ $(function() {
             $("#phone").focus();
             return false;
         }
-        if ($("#mail").val() == "") {
-            alert("其实用e-mail会显得更正式");
-            $("#email").focus();
-            return false;
-        }
+        // if ($("#mail").val() == "") {
+        //     alert("其实用e-mail会显得更正式");
+        //     $("#email").focus();
+        //     return false;
+        // }
         if ($("#qq").val() == "") {
             alert("其实QQ也是一个很好的东西啊");
             $("#qq").focus();
             return false;
         }
 
-        if ($("#dormitory").val() == "") {
-            alert("告诉我你宿舍吧，万一哪天。。。。");
-            form.dormitory.focus();
-            return false;
-        }
+        // if ($("#dormitory").val() == "") {
+        //     alert("告诉我你宿舍吧，万一哪天。。。。");
+        //     form.dormitory.focus();
+        //     return false;
+        // }
         if ($("#depart1").val() == "") {
             alert("不告诉我你想去哪里我就派你去扫厕所");
             $("#depart1").focus();
