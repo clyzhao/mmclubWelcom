@@ -181,22 +181,22 @@ body{
 #intro9{
 	font-size: 0.9rem;
 	color: #698488;
-	margin-bottom: 1.5rem;
+	margin-bottom: 1rem;
 }
 #intro10{
 	font-size: 0.9rem;
 	color: #faf68f;
-	margin-bottom: 1rem;
+	margin-bottom: 0.5rem;
 }
 #intro11{
 	font-size: 0.9rem;
 	color: #faf68f;
-	margin-bottom: 1rem;
+	margin-bottom: 0.5rem;
 }
 #intro12{
 	font-size: 0.9rem;
 	color: #faf68f;
-	margin-bottom: 1rem;
+	margin-bottom: 0.5rem;
 }
 #intro13{
 	font-size: 0.9rem;
@@ -220,6 +220,31 @@ body{
 	font-weight: bold;
 }
 
+.contentDiv{
+	position: relative;
+	bottom: 8%;
+}
+
+a{
+			text-decoration: none;
+			position: absolute;
+			padding: 10px 20px;
+			border: 1px solid #faf68f;
+			font-size: 1.3rem;
+			left: 40%;
+			border-radius: 3px;
+			bottom: 8%;
+			font-weight: lighter;
+			-webkit-font-smoothing: antialiased;
+			-moz-font-smoothing: antialiased;
+			-o-font-smoothing: antialiased;
+			-ms-font-smoothing: antialiased;
+			font-smoothing: antialiased;
+}
+		a:link    {color: #faf68f;}
+		a:visited {color: #faf68f;}
+		a:hover   {color: #faf68f;}
+		a:active  {color: #faf68f;}
 
 @media all and (max-width: 321px){
 	/*page1 begins*/
@@ -239,5 +264,14 @@ body{
 	/*page2 ended page3 begins*/
 	#intro9{
 		display: none;
+	}
+	#intro13{
+		margin-bottom: 0.5rem;
+	}
+	#intro15{
+		margin-bottom: 0.5rem;
+	}
+	a{
+		bottom: 5%;
 	}
 }
