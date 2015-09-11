@@ -3,7 +3,7 @@
 <head>
     <title></title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
     <script src="js/jquery-1.9.0.min.js"></script>
     <script src="js/resLoader.js"></script>
     <!-- fullPage -->
@@ -38,7 +38,7 @@
     </style>
 </head>
 <body>
-<div class="wrapper">
+<div class="wrapper" style="display: none;">
     <div id="fullpage">
         <div class="section page1" id="page1">
             <div class="open">
@@ -167,24 +167,14 @@
             
         </div>
     </div> 
-
-    <div id="loading">
+</div>
+<div id="loading">
         <img src="img/loading.jpg">
         <p id="loading-status"></p>
-    </div>
 </div>
-
-<script type="text/javascript">
-    window.onload = function(){
-   
-}
-</script>
-
-    
 </body>
 
 <script type="text/javascript">
-document.documentElement.style.height = window.innerHeight + 'px';
 var loader = new resLoader({
          resources : [
               'img/page1.png',
@@ -196,15 +186,15 @@ var loader = new resLoader({
          ],
          onStart : function(total){
               console.log('start:'+total);
-            $("#fullpage").css("display", "none");
+            $(".wrapper").css("display", "none");
          },
          onProgress : function(current, total){
               console.log(current+'/'+total);
               $("#loading-status").text("加载中..."+current+"/"+total);
          },
          onComplete : function(total){
-            $("#loading").remove();
-            $("#fullpage").css("display", "block");
+            $("#loading").css("display", "none");
+            $(".wrapper").css("display", "block");
             $('#fullpage').fullpage({
                 //Navigation
                 menu: false,
