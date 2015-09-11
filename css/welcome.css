@@ -3,6 +3,11 @@
 	padding: 0;
 }
 
+body{
+	font-family: Microsoft Yahei;
+	color: white;
+}
+
 @media all and (min-width: 415px){
 	.wrapper{
 		width: 375px;
@@ -81,24 +86,91 @@
 /*page1 ended, page2 begins*/
 .titleImg{
 	position: relative;
-	width: 50%;
+	display: inherit;
+	width: 45%;
 	left: 41%; 
-	top: 2%;
 	z-index: 10;
+	top: 1%;
 }
 
 .decorationImg{
 	position: relative;
+	display: inherit;
 	left: 40%;
 	width: 60%;
-	top: 1%;
 	opacity: 0.1;
 }
 
-
-.contentImg{
+.text{
 	position: relative;
-	width: 53%;
 	left: 41%;
+	font-weight: lighter;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-o-font-smoothing: antialiased;
+	-ms-font-smoothing: antialiased;
+	font-smoothing: antialiased;
 }
+
+#softPink{
+	font-size: 1.1rem;
+	color: pink;
+	left: 40%;
+	bottom: 1%;
+}
+
+#intro1{
+	font-size: 1.0rem;
+	color: yellow;
+	line-height: 2.0rem;
+	margin-top: 5%;
+	margin-bottom: 6%;
+}
+
+#intro2{
+	font-size: 1.0rem;
+	color: yellow;
+	line-height: 2.0rem;
+}
+
+/*page2 ended page3 begins*/
+.page3{
+	overflow: hidden;
+}
+
+.page3Title{
+	position: relative;
+	display: inherit;
+	width: 58%;
+	left: 40.2%; 
+	bottom: 4%;
+}
+
+#intro3{
+	font-size: 0.9rem;
+	color: yellow;
+	margin-bottom: 1rem;
+}
+#intro4{
+	font-size: 0.9rem;
+	color: yellow;
+	margin-bottom: 1rem;
+}
+#intro5{
+	font-size: 0.9rem;
+	color: yellow;
+	margin-bottom: 1rem;
+}
+#intro6{
+	font-size: 0.7rem;
+	color: yellow;
+	margin-bottom: 1rem;
+}
+#intro7{
+	font-size: 0.7rem;
+	color: yellow;
+	margin-bottom: 1rem;
+}
+
+
 
