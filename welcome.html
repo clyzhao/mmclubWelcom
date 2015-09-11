@@ -177,102 +177,108 @@
 </body>
 
 <script type="text/javascript">
-var loader = new resLoader({
-         resources : [
-              'img/page1.png',
-              'img/index_BG_change.jpg',
-              'img/page1.png',
-              'img/page2.jpg',
-              'img/page3.jpg'
-              // 'http://www.kdatu.com/wp-content/uploads/2015/08/592609.jpg'
-         ],
-         onStart : function(total){
-              console.log('start:'+total);
-            $(".wrapper").css("display", "none");
-         },
-         onProgress : function(current, total){
-              console.log(current+'/'+total);
-              $("#loading-status").text("加载中..."+current+"/"+total);
-         },
-         onComplete : function(total){
-            $("#loading").css("display", "none");
-            $(".wrapper").css("display", "block");
-            $('#fullpage').fullpage({
-                //Navigation
-                menu: false,
-                lockAnchors: false,
-                anchors:['firstPage', 'secondPage','thirdPage', 'forthPage'],
-                navigation: false,
-                navigationPosition: 'right',
-                navigationTooltips: ['firstSlide', 'secondSlide'],
-                showActiveTooltip: false,
-                slidesNavigation: true,
-                slidesNavPosition: 'bottom',
+$("document").ready(function () {
+    // document.documentElement.style.height = window.innerHeight + 'px';
+    // $(".section").css("height", window.innerHeight + 'px');
+    $(".wrapper").css("height", window.innerHeight + 'px');
+    var loader = new resLoader({
+             resources : [
+                  'img/page1.png',
+                  'img/index_BG_change.jpg',
+                  'img/page1.png',
+                  'img/page2.jpg',
+                  'img/page3.jpg'
+                  // 'http://www.kdatu.com/wp-content/uploads/2015/08/592609.jpg'
+             ],
+             onStart : function(total){
+                
+                  console.log('start:'+total);
+                $(".wrapper").css("display", "none");
+             },
+             onProgress : function(current, total){
+                  console.log(current+'/'+total);
+                  $("#loading-status").text("加载中..."+current+"/"+total);
+             },
+             onComplete : function(total){
+                $("#loading").css("display", "none");
+                $(".wrapper").css("display", "block");
+                $('#fullpage').fullpage({
+                    //Navigation
+                    menu: false,
+                    lockAnchors: false,
+                    anchors:['firstPage', 'secondPage','thirdPage', 'forthPage'],
+                    navigation: false,
+                    navigationPosition: 'right',
+                    navigationTooltips: ['firstSlide', 'secondSlide'],
+                    showActiveTooltip: false,
+                    slidesNavigation: true,
+                    slidesNavPosition: 'bottom',
 
-                //Scrolling
-                css3: true,
-                scrollingSpeed: 700,
-                autoScrolling: true,
-                fitToSection: true,
-                fitToSectionDelay: 1000,
-                scrollBar: false,
-                easing: 'easeInOutCubic',
-                easingcss3: 'ease',
-                loopBottom: false,
-                loopTop: false,
-                loopHorizontal: true,
-                continuousVertical: false,
-                normalScrollElements: '#element1, .element2',
-                scrollOverflow: false,
-                touchSensitivity: 15,
-                normalScrollElementTouchThreshold: 5,
+                    //Scrolling
+                    css3: false,
+                    scrollingSpeed: 700,
+                    autoScrolling: true,
+                    fitToSection: true,
+                    fitToSectionDelay: 1000,
+                    scrollBar: false,
+                    easing: 'easeInOutCubic',
+                    easingcss3: 'ease',
+                    loopBottom: false,
+                    loopTop: false,
+                    loopHorizontal: true,
+                    continuousVertical: false,
+                    normalScrollElements: '#element1, .element2',
+                    scrollOverflow: false,
+                    touchSensitivity: 15,
+                    normalScrollElementTouchThreshold: 5,
 
-                //Accessibility
-                keyboardScrolling: true,
-                animateAnchor: true,
-                recordHistory: true,
+                    //Accessibility
+                    keyboardScrolling: true,
+                    animateAnchor: true,
+                    recordHistory: true,
 
-                //Design
-                controlArrows: true,
-                verticalCentered: true,
-                resize : false,
-                sectionsColor : ['#ccc', '#fff'],
-                paddingTop: '3em',
-                paddingBottom: '10px',
-                fixedElements: '#header, .footer',
-                responsiveWidth: 0,
-                responsiveHeight: 0,
+                    //Design
+                    controlArrows: true,
+                    verticalCentered: true,
+                    resize : true,
+                    sectionsColor : ['#ccc', '#fff'],
+                    paddingTop: '0em',
+                    paddingBottom: '0px',
+                    fixedElements: '#header, .footer',
+                    responsiveWidth: 0,
+                    responsiveHeight: 0,
 
-                //Custom selectors
-                sectionSelector: '.section',
-                slideSelector: '.slide',
+                    //Custom selectors
+                    sectionSelector: '.section',
+                    slideSelector: '.slide',
 
-                //events
-                onLeave: function(index, nextIndex, direction){},
-                afterLoad: function(anchorLink, index){
-                  
-                },
-                afterRender: function(){},
-                afterResize: function(){},
-                afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
-                onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
-            });
-
-
-            $.fn.fullpage.setAllowScrolling(false, 'down, right');
-            var openButton = document.getElementById('openButton');
+                    //events
+                    onLeave: function(index, nextIndex, direction){},
+                    afterLoad: function(anchorLink, index){
+                      
+                    },
+                    afterRender: function(){},
+                    afterResize: function(){},
+                    afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
+                    onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
+                });
 
 
-         }, 
-    });
-    loader.start();
+                $.fn.fullpage.setAllowScrolling(false, 'down, right');
+                var openButton = document.getElementById('openButton');
 
-    $("#openButton").click(function () {
-      $("#page1").removeClass("page1");
-      $("#page1").addClass("page1-change");
-      $.fn.fullpage.setAllowScrolling(true  , 'down, right');
-      $(this).css("display", "none");
 
-    })
+             }, 
+        });
+        loader.start();
+
+        $("#openButton").click(function () {
+          $("#page1").removeClass("page1");
+          $("#page1").addClass("page1-change");
+          $.fn.fullpage.setAllowScrolling(true  , 'down, right');
+          $(this).css("display", "none");
+
+        })
+})
 </script>
 </html>
