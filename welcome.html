@@ -10,34 +10,317 @@
     <script src="js/jquery.fullPage.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css">
     
-    <link rel="stylesheet" type="text/css" href="css/welcome.css">
     <style type="text/css">
+    html{
+        overflow: hidden;
+    }
     .page1{
-        background: url(img/page1.png);
+        background: url(http://7xliif.com1.z0.glb.clouddn.com/page1.png);
         background-size: 100% 100%;
     }
     .page1-change{
-      background: url(img/index_BG_change.jpg);
+      background: url(http://7xliif.com1.z0.glb.clouddn.com/index_BG_change.jpg);
       background-size: 100% 100%;
     }
 
     .page2{
-        background: url(img/page2.jpg);
+        background: url(http://7xliif.com1.z0.glb.clouddn.com/page2.jpg);
         background-size: 100% 100%;
     }
 
     .page3{
-      background: url(img/page3.jpg);
+      background: url(http://7xliif.com1.z0.glb.clouddn.com/page3.jpg);
       background-size: 100% 100%;
     }
 
     .page4{
-    	background: url(img/page4.png);
+    	background: url(http://7xliif.com1.z0.glb.clouddn.com/page4.png);
     	background-size: 100% 100%;
+    }
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    body{
+        font-family: Microsoft Yahei;
+        background-color: black;
+    }
+
+    @media all and (min-width: 415px){
+        .wrapper{
+            width: 375px;
+            margin: 0 auto;
+        }
+        body{
+            background: blcak;
+        }   
+    }
+
+
+
+    .open{
+        text-align: center;
+        position: absolute;
+        bottom: 7%;
+        width: 100%;
+    }
+    .open img{
+        height: auto;
+        border-radius: 50%;
+        width: 15%;
+        margin-left: 10px;
+    }
+
+
+
+    .intro-1{
+            margin-left: 35%;
+            margin-right: 5%;
+            margin-top: 5%; 
+            width: auto;
+            height: auto; 
+            padding: 0.5em;
+            font-size: 0.8em;
+    }
+
+
+    .intro-2{
+            margin-left: 35%;
+            margin-right: 5%;
+            margin-top: 5%; 
+            width: auto;
+            height: auto; 
+            padding: 0.5em;
+            font-size: 0.8em;
+    }
+
+
+
+    #loading{
+        margin: auto;
+        position: absolute;
+        background-color: #ffda4a;
+        top: 0; left: 0; bottom: 0; right: 0;  
+    }
+    #loading img{
+        width: 50%;
+        max-width: 300px;
+        height: auto;
+          overflow: auto;  
+          margin: auto;  
+          position: absolute;  
+          top: 0; left: 0; bottom: 0; right: 0;  
+    }
+    #loading p{
+        width: 100%;
+        text-align: center;
+        color: white;
+        position: absolute;
+        bottom: 1em;
+        font-size: 2.5em;
+    }
+
+    /*page1 ended, page2 begins*/
+    .titleImg{
+        position: relative;
+        display: inherit;
+        width: 45%;
+        left: 41%; 
+        z-index: 10;
+        top: 1%;
+    }
+
+    .decorationImg{
+        position: relative;
+        display: inherit;
+        left: 40%;
+        width: 60%;
+        opacity: 0.1;
+    }
+
+    .text{
+        position: relative;
+        left: 41%;
+        font-weight: normal;
+        -webkit-font-smoothing: antialiased;
+        -moz-font-smoothing: antialiased;
+        -o-font-smoothing: antialiased;
+        -ms-font-smoothing: antialiased;
+        font-smoothing: antialiased;
+    }
+
+    #softPink{
+        font-size: 1.1rem;
+        color: #ff8a8a;
+        left: 40%;
+        bottom: 1%;
+        font-weight: bold;
+    }
+
+    #intro1{
+        font-size: 1.0rem;
+        color: #faf68f;
+        line-height: 2.0rem;
+        margin-top: 5%;
+        margin-bottom: 6%;
+    }
+
+    #intro2{
+        font-size: 1.0rem;
+        color: #faf68f;
+        line-height: 2.0rem;
+    }
+
+    /*page2 ended page3 begins*/
+    .page3{
+        overflow: hidden;
+    }
+
+    .page3Title{
+        position: relative;
+        display: inherit;
+        width: 58%;
+        left: 40.2%; 
+        bottom: 4%;
+    }
+
+    #intro3{
+        font-size: 0.9rem;
+        color: #faf68f;
+        margin-bottom: 1rem;
+    }
+    #intro4{
+        font-size: 0.9rem;
+        color: #faf68f;
+        margin-bottom: 1rem;
+    }
+    #intro5{
+        font-size: 0.9rem;
+        color: #faf68f;
+        margin-bottom: 1rem;
+    }
+    #intro6{
+        font-size: 0.7rem;
+        color: #749882;
+        margin-bottom: 1rem;
+    }
+    #intro7{
+        font-size: 0.7rem;
+        color: #749882;
+    }
+
+    /*page3 ended page4 begins*/
+    #intro8{
+        font-size: 1.5rem;
+        color: #8EEAFE;
+        margin-bottom: 1rem;
+        font-weight: bold;
+    }
+    #intro9{
+        font-size: 0.9rem;
+        color: #698488;
+        margin-bottom: 1rem;
+    }
+    #intro10{
+        font-size: 0.9rem;
+        color: #faf68f;
+        margin-bottom: 0.5rem;
+    }
+    #intro11{
+        font-size: 0.9rem;
+        color: #faf68f;
+        margin-bottom: 0.5rem;
+    }
+    #intro12{
+        font-size: 0.9rem;
+        color: #faf68f;
+        margin-bottom: 0.5rem;
+    }
+    #intro13{
+        font-size: 0.9rem;
+        color: #faf68f;
+        margin-bottom: 1rem;
+    }
+    #intro14{
+        font-size: 0.9rem;
+        color: #FED77A;
+        margin-bottom: 1rem;
+    }
+    #intro15{
+        font-size: 0.9rem;
+        color: #faf68f;
+        margin-bottom: 1rem;
+    }
+    #intro16{
+        font-size: 1.1rem;
+        color: #8EEAFE;
+        margin-bottom: 1rem;
+        font-weight: bold;
+    }
+
+    .contentDiv{
+        position: relative;
+        bottom: 8%;
+    }
+
+    a{
+                text-decoration: none;
+                position: absolute;
+                padding: 10px 20px;
+                border: 1px solid #faf68f;
+                font-size: 1.3rem;
+                left: 40%;
+                border-radius: 3px;
+                bottom: 8%;
+                font-weight: lighter;
+                -webkit-font-smoothing: antialiased;
+                -moz-font-smoothing: antialiased;
+                -o-font-smoothing: antialiased;
+                -ms-font-smoothing: antialiased;
+                font-smoothing: antialiased;
+    }
+            a:link    {color: #faf68f;}
+            a:visited {color: #faf68f;}
+            a:hover   {color: #faf68f;}
+            a:active  {color: #faf68f;}
+
+    @media all and (max-width: 321px){
+        /*page1 begins*/
+        #softPink{
+            bottom: 13%;
+        }
+        #intro1{
+            bottom: 12.6%;
+        }
+        #intro2{
+            bottom: 12.6%;
+        }
+        /*page1 ended page2 begins*/
+        #intro6{
+            display: none;
+        }
+        /*page2 ended page3 begins*/
+        #intro9{
+            display: none;
+        }
+        #intro13{
+            margin-bottom: 0.5rem;
+        }
+        #intro15{
+            margin-bottom: 0.5rem;
+        }
+        a{
+            bottom: 5%;
+        }
     }
     </style>
 </head>
 <body>
+<div id="loading">
+        <img src="http://7xliif.com1.z0.glb.clouddn.com/loading.jpg">
+        <p id="loading-status"></p>
+</div>
 <div class="wrapper" style="display: none;">
     <div id="fullpage">
         <div class="section page1" id="page1">
@@ -47,20 +330,9 @@
                
             </div>
         </div>
-
-
         <div class="section page2">
-            <!-- <p id="intro-1" class="intro-1"> 
-                让自己的写的应用在自己和朋友的手机上跑起来，为自己的生活提供乐趣和方便。我们最讨厌过时的而且有错误的教科书上的所谓编程实验，我们喜欢尝试最新的SDK特性，开发炫酷的App应用，在App市场上淘金。
-            </p>
-            <p id="intro-2" class="intro-1">
-                我们相信一款好的产品不仅需要漂亮的代码，更需要精心策划的产品功能，交互体验与漂亮精致的设计稿。我们不仅开发功能强大的App，也希望我们的应用能够美观漂亮，触动人心。
-            </p>
-            <p id="intro-3" class="intro-1">
-                我们不喜欢各种主席、部长的称号，也不喜欢繁杂无意义的例会，更讨厌刷存在感的活动。我们喜欢构建一个有爱的小团队，轻松的氛围，让大家共同成长。我们会定期举行黑客马拉松，技术交流，头脑风暴，户外活动。
-            </p> -->
-            <img src="img/mmclubTitle.png" class="titleImg">
-            <img src="img/page02_decoration.png" class="decorationImg">
+            <img src="http://7xliif.com1.z0.glb.clouddn.com/mmclubTitle.png" class="titleImg">
+            <img src="http://7xliif.com1.z0.glb.clouddn.com/page02_decoration.png" class="decorationImg">
             <p id="softPink" class="text">“软” 得不行</p>
             <p class="text" id="intro1">
             	玩技术<br>
@@ -74,19 +346,8 @@
             	第一个互联网产品的起点
             </p>
         </div>
-
-
         <div class="section page3">
-            <!-- <p id="intro-4" class="intro-2"> 
-                让自己的写的应用在自己和朋友的手机上跑起来，为自己的生活提供乐趣和方便。我们最讨厌过时的而且有错误的教科书上的所谓编程实验，我们喜欢尝试最新的SDK特性，开发炫酷的App应用，在App市场上淘金。
-            </p>
-            <p id="intro-5" class="intro-2">
-                我们相信一款好的产品不仅需要漂亮的代码，更需要精心策划的产品功能，交互体验与漂亮精致的设计稿。我们不仅开发功能强大的App，也希望我们的应用能够美观漂亮，触动人心。
-            </p>
-            <p id="intro-6" class="intro-2">
-                我们不喜欢各种主席、部长的称号，也不喜欢繁杂无意义的例会，更讨厌刷存在感的活动。我们喜欢构建一个有爱的小团队，轻松的氛围，让大家共同成长。我们会定期举行黑客马拉松，技术交流，头脑风暴，户外活动。
-            </p> -->
-            <img src="img/page03_CONTENT01.png" class="page3Title">
+            <img src="http://7xliif.com1.z0.glb.clouddn.com/page03_CONTENT01.png" class="page3Title">
             <p class="text" id="intro3">
             	我们一直努力<br>
             	去创造更多的可能
@@ -161,39 +422,37 @@
             </p>
             <p class="text" id="intro16">
             	招新分组:<br>
-            	&nbsp&nbsp&nbsp&nbsp程序组<br>
-            	&nbsp&nbsp&nbsp&nbsp界面设计(UI/UX)<br>
-            	&nbsp&nbsp&nbsp&nbsp活动管理
+            	&nbsp&nbsp程序组<br>
+            	&nbsp&nbsp界面设计(UI/UX)<br>
+            	&nbsp&nbsp活动管理
             </p>
             </div>
             <a href="join.html">加入我们</a>
         </div>
     </div> 
 </div>
-<div id="loading">
-        <img src="img/loading.jpg">
-        <p id="loading-status"></p>
-</div>
+
 </body>
 
 <script type="text/javascript">
 $("document").ready(function () {
-    // document.documentElement.style.height = window.innerHeight + 'px';
-    // $(".section").css("height", window.innerHeight + 'px');
+    // $(".wrapper").css("display", "none");
     $(".wrapper").css("height", window.innerHeight + 'px');
     var loader = new resLoader({
              resources : [
-                  'img/page1.png',
-                  'img/index_BG_change.jpg',
-                  'img/page1.png',
-                  'img/page2.jpg',
-                  'img/page3.jpg'
-                  // 'http://www.kdatu.com/wp-content/uploads/2015/08/592609.jpg'
+                    'http://7xliif.com1.z0.glb.clouddn.com/loading.jpg',
+                  'http://7xliif.com1.z0.glb.clouddn.com/button_open.png',
+                  'http://7xliif.com1.z0.glb.clouddn.com/index_BG_change.jpg',
+                  'http://7xliif.com1.z0.glb.clouddn.com/mmclubTitle.png',
+                  'http://7xliif.com1.z0.glb.clouddn.com/nextpage.png',
+                  'http://7xliif.com1.z0.glb.clouddn.com/page02_decoration.png',
+                  'http://7xliif.com1.z0.glb.clouddn.com/page1.png',
+                  'http://7xliif.com1.z0.glb.clouddn.com/page2.jpg',
+                  'http://7xliif.com1.z0.glb.clouddn.com/page3.jpg',
+                  'http://7xliif.com1.z0.glb.clouddn.com/page4.png'
              ],
              onStart : function(total){
-                
                   console.log('start:'+total);
-                $(".wrapper").css("display", "none");
              },
              onProgress : function(current, total){
                   console.log(current+'/'+total);
@@ -281,4 +540,7 @@ $("document").ready(function () {
         })
 })
 </script>
+<!-- fullPage -->
+<script src="js/jquery.fullPage.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css">
 </html>

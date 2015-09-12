@@ -22,12 +22,9 @@
 * {
     margin: 0px;
     padding: 0px;
+    
 }
 
-/*.content {
-    margin-left: 5%;
-    width: 100%;
-}*/
 body{
     background-color: black;
 }
@@ -38,28 +35,18 @@ body{
     position: relative;
 }
 
-@import "compass/css3";
-
-input[type="radio"]{
-  -webkit-appearance: none;
-    margin: 2px;
-  background: #1b1b1b;
-  width: 1em;
-  height: 1em;
-  border-radius: 50%;
-}
-input[type=radio]:checked{
-  background: #25ab92;
-}
-
 .form input {
     margin: 2px;
     border-radius: 5px;
     position: absolute;
     left: 20%;
-    width: 75%;
+    width: 74%;
     border: 1px solid #25ab92;
     height: 22px;
+    background-color: #1b1b1b;
+    color: #25ab92;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
 }
 
 label {
@@ -73,46 +60,28 @@ label {
     margin-top: 25px;
 }
 
-.form select {
-    margin: 2px;
-    position: absolute;
-    left: 20%;
-    top: 0px;
-    color: #25ab92;
-}
-
-.form input{
-    margin: 2px;
-    border-radius: 5px;
-    background-color: #1b1b1b;
-    border: 1px solid #25ab92;
-}
 
 .depart {
     margin: 2px;
     border-radius: 5px;
     margin-top: 20px;
 }
-
-.depart2 {
-    margin: 2px;
-    border-radius: 10px;
-    margin-top: 20px;
-}
-
-.college select {
-    margin: 2px;
-    width: 51%;
-    height: 22px;
-    color: #25ab92;
-}
-
-select {
-    margin: 2px;
-    color: #25ab92;
+.depart input, textarea{
+    width: 92%;
+    margin: 0.5em;
+    border-radius: 5px;
     background-color: #1b1b1b;
     border: 1px solid #25ab92;
+    height: 22px;
+    color: #25ab92;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
 }
+
+textarea{
+    height: 154px;
+}
+
 
 span {
     margin: 2px;
@@ -136,17 +105,6 @@ span {
     background: #1b1b1b;
     margin-top: 20px;
     padding-top: 20px;
-}
-
-textarea {
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 5px;
-    width: 98%;
-    margin-top: 10px;
-    height: 80px;
-    background-color: #1b1b1b;
-    border: 1px solid #25ab92;
 }
 
 .header {
@@ -174,17 +132,6 @@ textarea {
                 <label for="fname">学号：</label>
                 <input type="text" name="number" id="number">
             </div>
-            <div class="sex">
-                <span>请选择：</span>
-                <label for="male">汉纸</label>
-                <input type="radio" name="sex" id="male" value="男" class="radio">
-                <label for="female">妹纸</label>
-                <input type="radio" name="sex" id="female" value="女" class="radio">
-            </div>
-            <div class="major form">
-                <label for="fname">专业:</label>
-                <input type="text" name="major" id="major">
-            </div>
             <div class="phone form">
                 <label for="fname">手机:</label>
                 <input type="text" name="phone" id="phone">
@@ -194,38 +141,20 @@ textarea {
                 <input type="text" name="qq" id="qq">
             </div>
             <div class="depart"> 
-            <label for="fname">兴趣方向</label> 
-            <select name="department1" id="depart1">
-                    <option value="">请选择..</option>
-                    <option value="程序组">IOS组</option>
-	       <option value="ANDROID组">Android组</option>
-                    <option value="WEB组">Web组</option>
-                    <option value="UI组">UI组</option>
-                    <option value="活动管理">活动管理</option>
-            </select>
+<!--             .form select {
+                margin: 2px;
+                position: absolute;
+                left: 20%;
+                top: 0px;
+                color: #25ab92 !important;
+            } -->
+            <label for="fname">想加入<small>(IOS, Android, Web, UI, 策划)</small></label> <br/>
+                <input type="text" name="department1" id="department">
             </div>
-                        <div class="depart"> 
-                        <label for="fname">兴趣方向(备选)</label> 
-                        <select name="department2" id="depart1">
-                                <option value="">请选择..</option>
-                                <option value="程序组">IOS组</option>
-                       <option value="ANDROID组">Android组</option>
-                                <option value="WEB组">Web组</option>
-                                <option value="UI组">UI组</option>
-                                <option value="活动管理">活动管理</option>
-                        </select>
-                        </div>
             <div class="special form">
-                <label for="fname" name="speciality">特长·爱好·对啥感兴趣</label>
+                <label for="fname" name="speciality">自我介绍.<small>(兴趣爱好.目标......)</small></label>
                 <br/>
-                <textarea name="speciality" id="speciality">
-                </textarea>
-            </div>
-            <div class="study form">
-                <label>你希望从移动互联网俱乐部学到什么</label>
-                <br/>
-                <textarea name="study" id="study">
-                </textarea>
+                <textarea name="speciality" id="speciality"></textarea>
             </div>
             <input type="submit" value="提交" class="submit">
         </form>
@@ -248,17 +177,6 @@ $(function() {
             return false;
         }
 
-      if (!$('input[name="sex"]:checked').val()){
-         alert("性别呢");
-         $("#male").focus();
-         return false;
-      }
-
-        if ($("#major").val() == "") {
-            alert("你是什么专业的呢？");
-            $("#major").focus();
-            return false;
-        }
         if ($("#phone").val() == "") {
             alert("留个手机号认识一下吧");
             $("#phone").focus();
@@ -270,7 +188,7 @@ $(function() {
             $("#qq").focus();
             return false;
         }
-        if ($("#depart1").val() == "") {
+        if ($("#department").val() == "") {
             alert("不告诉我你想去哪里我就派你去扫厕所");
             $("#depart1").focus();
             return false;
@@ -278,11 +196,6 @@ $(function() {
         if ($("#speciality").val().trim()== "") {
             alert("这将是我们录取时最重要的参考！（请尽量详细陈述）");
             $("#speciality").focus();
-            return false;
-        }
-        if ($("#study").val().trim() =="") {
-            alert("  说说你的方向（请尽量50字以上）");
-            $("#study").focus();
             return false;
         }
         return true;
